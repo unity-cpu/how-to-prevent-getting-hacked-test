@@ -187,15 +187,15 @@
         document.body.classList.toggle('dark');
       });
     }
+  // ...other JS code...
 
-    // Visitor Counter
-    const visitsEl = document.getElementById('visits');
-    if (visitsEl) {
-      const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
-      localStorage.setItem('visits', visits);
-      visitsEl.textContent = Visitor count (this browser): ${visits};
-    }
-
+  // Visitor Counter
+  const visitsEl = document.getElementById('visits');
+  if (visitsEl) {
+    const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
+    localStorage.setItem('visits', visits);
+    visitsEl.textContent = `Visitor count (this browser): ${visits}`;
+  }
     // Quiz Logic
     const quiz = [
       { question: "Is 'paypaI.com' a legitimate site?", options: ["Yes", "No"], answer: 1 },
