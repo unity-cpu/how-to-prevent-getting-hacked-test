@@ -150,7 +150,10 @@
       <p id="strength">Strength: </p>
     </section>
     <!-- ... rest of your existing sections (progress tracker, news feed, quiz, visitors, settings) ... -->
-    <p class="footer">Built as a friendly, educational resource. Share it with friends & family to help them stay safer online. ✨</p>
+    <!-- line 153 -->
+<p id="visits" class="footer"></p>
+<p class="footer">Built as a friendly, educational resource. Share it with friends & family to help them stay safer online. ✨</p>
+
   </main>
 
   <script>
@@ -237,6 +240,16 @@
       box.addEventListener('change', () => {
         localStorage.setItem(key, box.checked ? '1' : '0');
         updateProgress();
+
+          // ...other JS code...
+
+  // Visitor Counter
+  const visitsEl = document.getElementById('visits');
+  if (visitsEl) {
+    const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
+    localStorage.setItem('visits', visits);
+    visitsEl.textContent = `Visitor count (this browser): ${visits}`;
+  }
       });
     });
   </script>
