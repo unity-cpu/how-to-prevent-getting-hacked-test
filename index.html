@@ -150,10 +150,7 @@
       <p id="strength">Strength: </p>
     </section>
     <!-- ... rest of your existing sections (progress tracker, news feed, quiz, visitors, settings) ... -->
-    <!-- line 153 -->
-<p id="visits" class="footer"></p>
-<p class="footer">Built as a friendly, educational resource. Share it with friends & family to help them stay safer online. ✨</p>
-
+    <p class="footer">Built as a friendly, educational resource. Share it with friends & family to help them stay safer online. ✨</p>
   </main>
 
   <script>
@@ -169,7 +166,7 @@
       if (/[\W_]/.test(pwd)) score++;
       if (pwd.length >= 8) score++;
       const strength = ["Very Weak","Weak","Medium","Strong","Very Strong"];
-      strengthText.textContent = `Strength: ${strength[Math.min(score,4)]}`;
+      strengthText.textContent = Strength: ${strength[Math.min(score,4)]};
     });
 
     // Checklist Progress (if you have more checklist items elsewhere)
@@ -178,7 +175,7 @@
     function updateProgress() {
       const total = checkboxes.length;
       const checked = Array.from(checkboxes).filter(c => c.checked).length;
-      progressBar.style.width = total ? `${Math.round((checked / total) * 100)}%` : '0%';
+      progressBar.style.width = total ? ${Math.round((checked / total) * 100)}% : '0%';
     }
     checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
     updateProgress();
@@ -196,7 +193,7 @@
     if (visitsEl) {
       const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
       localStorage.setItem('visits', visits);
-      visitsEl.textContent = `Visitor count (this browser): ${visits}`;
+      visitsEl.textContent = Visitor count (this browser): ${visits};
     }
 
     // Quiz Logic
@@ -206,12 +203,12 @@
     ];
     const quizContainer = document.getElementById('quiz');
     if (quizContainer) {
-      quizContainer.innerHTML = quiz.map((q, i) => `
+      quizContainer.innerHTML = quiz.map((q, i) => 
         <div class="quiz-question">
           <p>${q.question}</p>
-          ${q.options.map((opt, idx) => `<button onclick="checkAnswer(${i},${idx})">${opt}</button>`).join('')}
+          ${q.options.map((opt, idx) => <button onclick="checkAnswer(${i},${idx})">${opt}</button>).join('')}
         </div>
-      `).join('');
+      ).join('');
     }
     window.checkAnswer = (qIdx, optIdx) => {
       alert(optIdx === quiz[qIdx].answer ? "✅ Correct!" : "❌ Try again.");
@@ -225,7 +222,7 @@
         const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=YOUR_API_KEY&category=technology');
         const data = await res.json();
         const articles = data.news || [];
-        container.innerHTML = articles.map(a => `<li><a href="${a.url}" target="_blank">${a.title}</a></li>`).join('');
+        container.innerHTML = articles.map(a => <li><a href="${a.url}" target="_blank">${a.title}</a></li>).join('');
       } catch (e) {
         container.innerHTML = '<li>Unable to load news.</li>';
       }
@@ -234,22 +231,12 @@
 
     // Save checklist items to localStorage
     checkboxes.forEach((box, i) => {
-      const key = `safecheck-${i}`;
+      const key = safecheck-${i};
       const saved = localStorage.getItem(key);
       if (saved === '1') box.checked = true;
       box.addEventListener('change', () => {
         localStorage.setItem(key, box.checked ? '1' : '0');
         updateProgress();
-
-          // ...other JS code...
-
-  // Visitor Counter
-  const visitsEl = document.getElementById('visits');
-  if (visitsEl) {
-    const visits = parseInt(localStorage.getItem('visits') || '0') + 1;
-    localStorage.setItem('visits', visits);
-    visitsEl.textContent = `Visitor count (this browser): ${visits}`;
-  }
       });
     });
   </script>
