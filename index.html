@@ -3,91 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stay Safe Online – Stop Getting Hacked</title>
+  <title>Stay Safe Online made by unity – Stop Getting Hacked</title>
   <meta name="description" content="A simple, friendly website that explains how hacks happen, how different malware works, and how to protect yourself online." />
   <style>
     :root{
-      --bg: #0f172a;          /* slate-900 */
-      --panel: #111827;       /* gray-900 */
-      --muted: #94a3b8;       /* slate-400 */
-      --card: #0b1220;        /* deep panel */
-      --ink: #e5e7eb;         /* gray-200 */
-      --brand: #22d3ee;       /* cyan-400 */
-      --accent: #a78bfa;      /* violet-400 */
-      --ok: #4ade80;          /* green-400 */
-      --warn: #fbbf24;        /* amber-400 */
-      --bad: #f87171;         /* red-400 */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --bg: #0f172a; --panel: #111827; --muted: #94a3b8;
+      --card: #0b1220; --ink: #e5e7eb; --brand: #22d3ee;
+      --accent: #a78bfa; --ok: #4ade80; --warn: #fbbf24;
+      --bad: #f87171; --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
     }
-
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--ink); background: radial-gradient(1200px 600px at 10% -10%, rgba(167,139,250,.15), transparent),
-                          radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.12), transparent),
-                          var(--bg);
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    header{
-      position:sticky; top:0; z-index:10; backdrop-filter: saturate(140%) blur(8px);
-      background: linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.7));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+    html,body{height:100%; margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--ink); background: radial-gradient(1200px 600px at 10% -10%, rgba(167,139,250,.15), transparent), radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.12), transparent), var(--bg);}
+    a{color:var(--brand); text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky; top:0; z-index:10; backdrop-filter: saturate(140%) blur(8px); background: linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.7)); border-bottom:1px solid rgba(255,255,255,.06);}
     .container{max-width:1100px; margin:0 auto; padding:0 18px}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
     .logo{width:34px; height:34px; border-radius:10px; background:conic-gradient(from 180deg, var(--brand), var(--accent)); box-shadow: var(--shadow)}
     .nav a{margin-left:18px; opacity:.9}
-
     .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; padding:60px 0 30px}
     @media (max-width: 880px){ .hero{grid-template-columns:1fr; padding:36px 0 10px} }
-
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius); padding:28px; box-shadow: var(--shadow);
-    }
+    .hero-card{background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:28px; box-shadow: var(--shadow);}
     h1{font-size:clamp(28px, 4vw, 48px); line-height:1.15; margin:0 0 10px}
     .subtitle{color:var(--muted); font-size:clamp(14px, 2.2vw, 18px)}
-
     .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
     @media (max-width: 960px){ .grid{grid-template-columns:repeat(2,1fr)} }
     @media (max-width: 640px){ .grid{grid-template-columns:1fr} }
-
     .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px; box-shadow: var(--shadow)}
     .kicker{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--brand); font-weight:700}
     h2{margin:4px 0 8px; font-size:clamp(22px, 2.6vw, 28px)}
     h3{margin:8px 0 6px; font-size:clamp(18px, 2.2vw, 22px)}
-
     .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); font-weight:600}
     .dot{width:8px; height:8px; border-radius:50%}
-
-    .tips li{margin:8px 0}
-    .tips strong{color:#fff}
-
+    .tips li{margin:8px 0} .tips strong{color:#fff}
     .accordion details{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px 14px}
     .accordion details+details{margin-top:10px}
-    .accordion summary{cursor:pointer; list-style:none}
-    .accordion summary::-webkit-details-marker{display:none}
-    .accordion summary b{color:#fff}
-
+    .accordion summary{cursor:pointer; list-style:none} .accordion summary::-webkit-details-marker{display:none} .accordion summary b{color:#fff}
     .checklist li{display:flex; align-items:start; gap:10px; padding:10px 0}
     .check{flex:0 0 22px; height:22px; border-radius:6px; border:1.5px solid rgba(255,255,255,.2); display:inline-grid; place-items:center}
     .check input{accent-color: var(--ok); width:18px; height:18px}
-
     .pill{display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.1); margin:4px 6px 0 0; font-size:13px; color:var(--muted)}
-
     .footer{color:var(--muted); font-size:14px; padding:26px 0 40px}
+
+    /* Password checker */
+    #strength{margin-top:8px; font-weight:bold}
+    /* News feed & quiz styles */
+    #news-feed, #quiz{margin-top:10px}
+    /* Tooltip */
+    .tooltip{display:none; position:absolute; background:#333; color:#fff; padding:4px 8px; border-radius:4px; font-size:12px;}
+    [data-tooltip]:hover .tooltip{display:block;}
+    /* Progress bar */
+    #progress-container{background:#222; border-radius:8px; height:12px; overflow:hidden; margin:10px 0;}
+    #progress-bar{background:#22d3ee; height:100%; width:0%;}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><span class="logo" aria-hidden="true"></span> <span>Stay Safe Online made by unity</span></div>
+      <div class="brand"><span class="logo" aria-hidden="true"></span> <span>Stay Safe Online</span></div>
       <nav aria-label="Main">
         <a href="#how-hacks-happen">How Hacks Happen</a>
         <a href="#malware">Malware Types</a>
@@ -99,6 +73,7 @@
   </header>
 
   <main class="container">
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-card">
         <div class="badge" aria-label="status"><span class="dot" style="background:var(--ok)"></span> You’re in the right place</div>
@@ -123,176 +98,142 @@
       </div>
     </section>
 
-    <section id="how-hacks-happen" class="card" aria-labelledby="hacks-title">
-      <span class="kicker">Foundations</span>
-      <h2 id="hacks-title">How hacks usually happen</h2>
-      <div class="grid" style="margin-top:6px">
-        <div class="card">
-          <h3>Phishing & Social Engineering</h3>
-          <p>Attackers trick you into handing over passwords or installing malware using fake emails, texts, DMs, or sites that look real. Always double‑check the sender and URL, and when in doubt, go directly to the official site.</p>
-        </div>
-        <div class="card">
-          <h3>Weak or Reused Passwords</h3>
-          <p>If one site gets breached, attackers try the leaked password on your other accounts. Unique passwords + multi‑factor authentication block this.</p>
-        </div>
-        <div class="card">
-          <h3>Unpatched Software</h3>
-          <p>Old versions of apps or the OS can have known bugs. Keep automatic updates on so fixes (security patches) install as soon as they’re released.</p>
-        </div>
-        <div class="card">
-          <h3>Malicious Downloads</h3>
-          <p>Cracked software, random “drivers,” and shady browser extensions often carry malware. Only download from trusted sources and official stores.</p>
-        </div>
-        <div class="card">
-          <h3>Insecure Wi‑Fi</h3>
-          <p>Open Wi‑Fi can let others snoop traffic. Use your phone hotspot or a trusted network when logging into important accounts.</p>
-        </div>
-        <div class="card">
-          <h3>Data Leaks & Public Info</h3>
-          <p>Breaches and oversharing help attackers guess answers to security questions. Keep profiles private and avoid using real answers—use passphrases instead.</p>
-        </div>
-      </div>
+    <!-- Password Checker -->
+    <section class="card">
+      <span class="kicker">Interactive</span>
+      <h2>Password Strength Checker</h2>
+      <input type="password" id="password" placeholder="Type your password" />
+      <p id="strength">Strength: </p>
     </section>
 
-    <section id="malware" class="card" aria-labelledby="malware-title">
-      <span class="kicker">Threats</span>
-      <h2 id="malware-title">How different malware works (plain‑English)</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Virus</h3>
-          <p>Attaches to legitimate files and spreads when those files are opened or shared. Good antivirus and regular updates help catch and block it.</p>
-        </div>
-        <div class="card">
-          <h3>Worm</h3>
-          <p>Self‑spreads over networks without user action—often exploiting old vulnerabilities. Keeping systems patched shuts the door.</p>
-        </div>
-        <div class="card">
-          <h3>Trojan</h3>
-          <p>Disguised as something useful (e.g., a “free game” or “driver”) but opens a backdoor for attackers. Only install software from trusted sources.</p>
-        </div>
-        <div class="card">
-          <h3>Ransomware</h3>
-          <p>Encrypts your files and demands payment. Best protection: offline/cloud backups + updates + don’t click suspicious attachments.</p>
-        </div>
-        <div class="card">
-          <h3>Spyware</h3>
-          <p>Secretly monitors your activity, keystrokes, or camera/mic. Watch for unusual pop‑ups, new toolbars, and high CPU usage; run security scans.</p>
-        </div>
-        <div class="card">
-          <h3>Adware</h3>
-          <p>Bombards you with ads or redirects. Remove sketchy extensions and apps; only install from reputable publishers.</p>
-        </div>
-        <div class="card">
-          <h3>Rootkits</h3>
-          <p>Hide deep in the system to avoid detection. Prevention via secure boot, updates, and reputable security software is key.</p>
-        </div>
-        <div class="card">
-          <h3>Botnets</h3>
-          <p>Malware turns devices into “bots” controlled remotely to send spam or attack sites. Keep IoT devices updated and change default passwords.</p>
-        </div>
-        <div class="card">
-          <h3>Scareware</h3>
-          <p>Fake alerts try to panic you into buying junk software. Don’t click; close the tab and run a real security scan instead.</p>
-        </div>
-      </div>
+    <!-- Progress Tracker -->
+    <section class="card">
+      <span class="kicker">Checklist Progress</span>
+      <div id="progress-container"><div id="progress-bar"></div></div>
     </section>
 
-    <section id="protect" class="card" aria-labelledby="protect-title">
-      <span class="kicker">Action</span>
-      <h2 id="protect-title">Protection checklist (start here)</h2>
-      <ul class="checklist" aria-describedby="protect-desc">
-        <li><span class="check"><input type="checkbox" /></span> Turn on <b>automatic updates</b> for your OS, browser, and apps.</li>
-        <li><span class="check"><input type="checkbox" /></span> Use a <b>password manager</b>; change reused passwords to unique ones.</li>
-        <li><span class="check"><input type="checkbox" /></span> Enable <b>MFA/2FA</b> using an authenticator app (avoid SMS when possible).</li>
-        <li><span class="check"><input type="checkbox" /></span> Back up important files to the cloud <i>and</i> an external drive.</li>
-        <li><span class="check"><input type="checkbox" /></span> Lock down your router: change default password; use WPA2/3; update firmware.</li>
-        <li><span class="check"><input type="checkbox" /></span> Remove browser extensions and apps you don’t recognize or use.</li>
-        <li><span class="check"><input type="checkbox" /></span> Set devices to auto‑lock; use biometrics or a strong passcode.</li>
-        <li><span class="check"><input type="checkbox" /></span> Learn to spot <b>phishing</b> (see section below) and verify senders/links.</li>
-        <li><span class="check"><input type="checkbox" /></span> Review privacy/security settings on email and social accounts.</li>
-        <li><span class="check"><input type="checkbox" /></span> For downloads, prefer official stores or vendor sites only.</li>
-      </ul>
-      <p id="protect-desc" class="subtitle">If you only do a few things today, pick the first five—those provide the biggest risk reduction.</p>
+    <!-- News Feed -->
+    <section class="card">
+      <span class="kicker">News</span>
+      <h2>Cybersecurity News</h2>
+      <ul id="news-feed"></ul>
     </section>
 
-    <section id="phishing" class="card" aria-labelledby="phish-title">
-      <span class="kicker">Skills</span>
-      <h2 id="phish-title">Spot phishing & fake sites</h2>
-      <div class="accordion">
-        <details>
-          <summary><b>Check the sender and the URL</b> – small changes (like <code>paypaI.com</code> with a capital I) are common.</summary>
-          <div style="margin-top:10px">Open a new tab and type the site address yourself instead of clicking links. On mobile, long‑press links to preview the URL.</div>
-        </details>
-        <details>
-          <summary><b>Beware urgent or scary language</b> – “Your account will be deleted in 1 hour!”</summary>
-          <div style="margin-top:10px">Pressure is a red flag. Real companies rarely demand instant action or payment via gift cards/crypto.</div>
-        </details>
-        <details>
-          <summary><b>Unexpected attachments</b> – even from someone you know</summary>
-          <div style="margin-top:10px">Their account could be compromised. Verify with a separate message or call before opening.</div>
-        </details>
-        <details>
-          <summary><b>Use official apps and portals</b> – for banks, delivery, school, and work</summary>
-          <div style="margin-top:10px">Sign in through the official app or bookmarked link, not email/text links.</div>
-        </details>
-      </div>
+    <!-- Interactive Quiz -->
+    <section class="card">
+      <span class="kicker">Quiz</span>
+      <h2>Test Your Knowledge</h2>
+      <div id="quiz"></div>
     </section>
 
-    <section id="help" class="card" aria-labelledby="help-title">
-      <span class="kicker">Recovery</span>
-      <h2 id="help-title">Think you’re hacked? Do this now</h2>
-      <ol class="tips">
-        <li><strong>Disconnect</strong> from the internet (Wi‑Fi/ethernet) to stop data exfiltration.</li>
-        <li><strong>Change passwords</strong> for email and key accounts from a <em>clean</em> device. Turn on MFA.</li>
-        <li><strong>Run a full scan</strong> with your security software; remove suspicious apps/extensions.</li>
-        <li><strong>Restore</strong> from clean backups if files are corrupted or encrypted.</li>
-        <li><strong>Check account activity</strong> (logins, forwarding rules, recovery email/phone). Revoke unknown sessions.</li>
-        <li><strong>Report</strong> to your bank, school/work IT, or relevant service. Freeze cards if needed.</li>
-        <li><strong>Update</strong> everything, then reconnect and monitor for unusual behavior.</li>
-      </ol>
-      <p class="subtitle">Avoid paying ransoms—there’s no guarantee. Focus on backups and restoration.</p>
+    <!-- Visitor Count -->
+    <section class="card">
+      <span class="kicker">Visitors</span>
+      <h2>Visitor Count</h2>
+      <p id="visits"></p>
     </section>
 
-    <section class="card" aria-labelledby="extras-title">
-      <span class="kicker">Extras</span>
-      <h2 id="extras-title">Good habits & quick wins</h2>
-      <p>
-        <span class="pill">Use passphrases (e.g., four random words)</span>
-        <span class="pill">Turn on login alerts</span>
-        <span class="pill">Review app permissions</span>
-        <span class="pill">Separate work & personal email</span>
-        <span class="pill">Log out on shared devices</span>
-        <span class="pill">Encrypt lost‑prone devices</span>
-      </p>
-    </section>
-
-    <section class="card" aria-labelledby="learn-more-title">
-      <span class="kicker">Learn more</span>
-      <h2 id="learn-more-title">Want to go deeper?</h2>
-      <p class="subtitle">Search for these trustworthy resources:</p>
-      <ul>
-        <li>“How to turn on 2FA” for Google, Microsoft, Apple, Instagram, Discord, etc.</li>
-        <li>Guides from your device maker (Windows, macOS, iOS, Android) on security & privacy settings.</li>
-        <li>National cybersecurity awareness sites (government CSIRT/CERT and consumer protection agencies).</li>
-      </ul>
+    <!-- Dark / Light Mode Toggle -->
+    <section class="card">
+      <span class="kicker">Settings</span>
+      <button id="theme-toggle">Toggle Dark / Light Mode</button>
     </section>
 
     <p class="footer">Built as a friendly, educational resource. Share it with friends & family to help them stay safer online. ✨</p>
   </main>
 
   <script>
-    // Optional: remember which checklist items the user has ticked using localStorage.
-    (function(){
-      const checks = document.querySelectorAll('.checklist input');
-      checks.forEach((box, i)=>{
-        const key = `safecheck-${i}`;
-        const saved = localStorage.getItem(key);
-        if(saved === '1') box.checked = true;
-        box.addEventListener('change', ()=>{
-          localStorage.setItem(key, box.checked ? '1' : '0');
-        });
+    // -----------------------
+    // Password Strength Checker
+    // -----------------------
+    const passwordInput = document.getElementById('password');
+    const strengthText = document.getElementById('strength');
+    passwordInput.addEventListener('input', () => {
+      const pwd = passwordInput.value;
+      let score = 0;
+      if (/[A-Z]/.test(pwd)) score++;
+      if (/[a-z]/.test(pwd)) score++;
+      if (/\d/.test(pwd)) score++;
+      if (/[\W_]/.test(pwd)) score++;
+      if (pwd.length >= 8) score++;
+      const strength = ["Very Weak","Weak","Medium","Strong","Very Strong"];
+      strengthText.textContent = `Strength: ${strength[Math.min(score,4)]}`;
+    });
+
+    // -----------------------
+    // Progress Tracker
+    // -----------------------
+    const checkboxes = document.querySelectorAll('.checklist input');
+    const progressBar = document.getElementById('progress-bar');
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = Math.round((checked / total) * 100);
+      progressBar.style.width = percent + '%';
+    }
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+    updateProgress();
+
+    // -----------------------
+    // Dark / Light Mode
+    // -----------------------
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    // -----------------------
+    // Visitor Count
+    // -----------------------
+    const visitsEl = document.getElementById('visits');
+    const visits = parseInt(localStorage.getItem('visits')||'0')+1;
+    localStorage.setItem('visits', visits.toString());
+    visitsEl.textContent = `Visitor count (this browser): ${visits}`;
+
+    // -----------------------
+    // Interactive Quiz
+    // -----------------------
+    const quiz = [
+      {question:"Is 'paypaI.com' a legitimate site?", options:["Yes","No"], answer:1},
+      {question:"Should you reuse passwords?", options:["Yes","No"], answer:1}
+    ];
+    const quizContainer = document.getElementById('quiz');
+    quizContainer.innerHTML = quiz.map((q,i)=>`
+      <div class="quiz-question">
+        <p>${q.question}</p>
+        ${q.options.map((opt,idx)=>`<button onclick="checkAnswer(${i},${idx})">${opt}</button>`).join('')}
+      </div>
+    `).join('');
+    window.checkAnswer = function(qIdx,optIdx){
+      alert(optIdx===quiz[qIdx].answer ? "✅ Correct!" : "❌ Try again.");
+    }
+
+    // -----------------------
+    // News Feed (example, replace API key)
+    // -----------------------
+    async function loadCyberNews(){
+      const container = document.getElementById('news-feed');
+      try{
+        const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=YOUR_API_KEY&category=technology');
+        const data = await res.json();
+        const articles = data.news || [];
+        container.innerHTML = articles.map(a=>`<li><a href="${a.url}" target="_blank">${a.title}</a></li>`).join('');
+      }catch(e){ container.innerHTML = '<li>Unable to load news.</li>'; }
+    }
+    loadCyberNews();
+
+    // -----------------------
+    // Save checklist progress
+    // -----------------------
+    checkboxes.forEach((box,i)=>{
+      const key = `safecheck-${i}`;
+      const saved = localStorage.getItem(key);
+      if(saved==='1') box.checked = true;
+      box.addEventListener('change', ()=>{
+        localStorage.setItem(key, box.checked?'1':'0');
+        updateProgress();
       });
-    })();
+    });
   </script>
 </body>
 </html>
