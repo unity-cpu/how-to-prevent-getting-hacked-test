@@ -51,13 +51,13 @@
       <div class="brand">
         <span class="logo" aria-hidden="true"></span> <span>Stay Safe Online made by unity</span>
       </div>
-     <nav aria-label="Main">
-<button onclick="loadPage('how-hacks-happen')">How Hacks Happen</button>
-<button onclick="loadPage('malware')">Malware Types</button>
-<button onclick="loadPage('protect')">Protect Yourself</button>
-<button onclick="loadPage('phishing')">Spot Phishing</button>
-<button onclick="loadPage('help')">If You’re Hacked</button>
-</nav>
+      <nav aria-label="Main">
+        <a href="#how-hacks-happen">How Hacks Happen</a>
+        <a href="#malware">Malware Types</a>
+        <a href="#protect">Protect Yourself</a>
+        <a href="#phishing">Spot Phishing</a>
+        <a href="#help">If You’re Hacked</a>
+      </nav>
     </div>
   </header>
 
@@ -229,7 +229,7 @@
     }
     loadCyberNews();
 
-        // Save checklist items to localStorage
+    // Save checklist items to localStorage
     checkboxes.forEach((box, i) => {
       const key = `safecheck-${i}`;
       const saved = localStorage.getItem(key);
@@ -237,42 +237,6 @@
       box.addEventListener('change', () => {
         localStorage.setItem(key, box.checked ? '1' : '0');
         updateProgress();
-
-  // ... existing JS functions ...
-
-  // Save checklist items to localStorage
-  checkboxes.forEach((box, i) => {
-    const key = `safecheck-${i}`;
-    const saved = localStorage.getItem(key);
-    if (saved === '1') box.checked = true;
-    box.addEventListener('change', () => {
-      localStorage.setItem(key, box.checked ? '1' : '0');
-      updateProgress();
-    });
-  });
-
-  // Load Section Function (Clears Page and Shows Only One Section)
-  function loadPage(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-
-    // Clone section content
-    const clone = section.cloneNode(true);
-
-    // Create a back button
-    const backBtn = document.createElement('button');
-    backBtn.textContent = '← Back to Main Page';
-    backBtn.style = 'margin: 20px; padding: 10px; font-size: 16px; background: var(--panel); color: var(--ink); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;';
-    backBtn.onclick = () => location.reload();
-
-    // Clear the entire page
-    document.body.innerHTML = '';
-    document.body.style.background = 'var(--bg)';
-    document.body.style.color = 'var(--ink)';
-
-    // Add the back button and selected section
-    document.body.appendChild(backBtn);
-    document.body.appendChild(clone);
       });
     });
   </script>
