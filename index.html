@@ -339,31 +339,6 @@
     loadCyberNews();
 
 <script>
-  // ... your existing JS like password checker, quiz logic, etc.
-
-  async function loadCyberNews() {
-    const container = document.getElementById('news-feed');
-    if (!container) return;
-    container.innerHTML = '<li>Loading news...</li>';
-
-    try {
-      const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=1fV9krzvJ1COrayjqLdUVwqtPxwHIrRWSTDeM7VeVAIR6y5E&category=technology');
-      const data = await res.json();
-      const articles = data.news || [];
-
-      container.innerHTML = articles.slice(0,5).map(a =>
-        `<li><a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title}</a></li>`
-      ).join('');
-    } catch (e) {
-      console.error("News fetch error:", e);
-      container.innerHTML = '<li>Unable to load news.</li>';
-    }
-  }
-
-  loadCyberNews();
-
-  // ... any other scripts you have
-</script>
 
     // Save checklist items to localStorage
     checkboxes.forEach((box, i) => {
