@@ -237,6 +237,17 @@
         <li><strong>Report & Notify:</strong> Report to the service provider and relevant authorities if needed.</li>
       </ol>
     </section>
+    
+    <section id="cyber-news" class="card" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff;">
+  <span class="kicker" style="color: var(--brand); font-size: 12px;">CYBER NEWS</span>
+  <h2 style="font-size: 24px; font-weight: 700; margin: 6px 0 12px;">Latest Cybersecurity Headlines</h2>
+  <p style="color: #94a3b8; font-size: 15px; margin-bottom: 20px;">
+    Stay up to date with tech and security stories from around the world.
+  </p>
+  <ul id="news-feed" style="list-style: none; padding-left: 0; margin: 0;">
+    <li>Loading news...</li> <!-- This gets replaced by JS -->
+  </ul>
+</section>
 
     <!-- Remaining Content -->
     <section class="card">
@@ -317,7 +328,7 @@
       const container = document.getElementById('news-feed');
       if (!container) return;
       try {
-        const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=YOUR_API_KEY&category=technology');
+        const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=1fV9krzvJ1COrayjqLdUVwqtPxwHIrRWSTDeM7VeVAIR6y5E&category=technology');
         const data = await res.json();
         const articles = data.news || [];
         container.innerHTML = articles.map(a => `<li><a href="${a.url}" target="_blank">${a.title}</a></li>`).join('');
@@ -326,6 +337,33 @@
       }
     }
     loadCyberNews();
+
+<script>
+  // ... your existing JS like password checker, quiz logic, etc.
+
+  async function loadCyberNews() {
+    const container = document.getElementById('news-feed');
+    if (!container) return;
+    container.innerHTML = '<li>Loading news...</li>';
+
+    try {
+      const res = await fetch('https://api.currentsapi.services/v1/latest-news?apiKey=1fV9krzvJ1COrayjqLdUVwqtPxwHIrRWSTDeM7VeVAIR6y5E&category=technology');
+      const data = await res.json();
+      const articles = data.news || [];
+
+      container.innerHTML = articles.slice(0,5).map(a =>
+        `<li><a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title}</a></li>`
+      ).join('');
+    } catch (e) {
+      console.error("News fetch error:", e);
+      container.innerHTML = '<li>Unable to load news.</li>';
+    }
+  }
+
+  loadCyberNews();
+
+  // ... any other scripts you have
+</script>
 
     // Save checklist items to localStorage
     checkboxes.forEach((box, i) => {
