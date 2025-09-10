@@ -49,7 +49,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <span class="logo" aria-hidden="true"></span> <span>Stay Safe Online made by unity</span>
+        <span class="logo" aria-hidden="true"></span> <span>Stay Safe Online made by bentley</span>
       </div>
       <nav aria-label="Main">
         <a href="#how-hacks-happen">How Hacks Happen</a>
@@ -95,40 +95,136 @@
     </section>
 
     <section id="malware" class="card">
-      <span class="kicker">Malware Types</span>
-      <h2>Common Malware Types</h2>
-      <ul class="tips">
-        <li><strong>Viruses:</strong> Infect and spread through files or systems.</li>
-        <li><strong>Worms:</strong> Self-replicate and travel across networks without needing help.</li>
-        <li><strong>Ransomware:</strong> Locks your data and demands payment to unlock it.</li>
-        <li><strong>Spyware:</strong> Secretly monitors activity and steals data.</li>
-        <li><strong>Trojans:</strong> Pretend to be harmless but actually open a way for attackers.</li>
-      </ul>
-    </section>
+  <span class="kicker">Malware Types</span>
+  <h2>Malware Types</h2>
+  <div style="display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));">
+    <div class="card">
+  <h3>📛 Virus</h3>
+  <p>Attaches to legitimate files and spreads when executed.<br>
+    <strong>Effect:</strong> Corrupts or deletes data.<br>
+    <strong>Protect Yourself:</strong> Use antivirus software and avoid opening unknown email attachments.
+  </p>
+</div>
+<div class="card">
+  <h3>🪱 Worm</h3>
+  <p>Spreads across networks without user action.<br>
+    <strong>Effect:</strong> Slows systems, spreads fast.<br>
+    <strong>Protect Yourself:</strong> Keep your operating system and software updated, and use a firewall.
+  </p>
+</div>
+<div class="card">
+  <h3>🧨 Ransomware</h3>
+  <p>Encrypts files and demands payment.<br>
+    <strong>Effect:</strong> Locks users out of their data.<br>
+    <strong>Protect Yourself:</strong> Back up your data regularly and avoid clicking on suspicious links.
+  </p>
+</div>
+<div class="card">
+  <h3>🕵️ Spyware</h3>
+  <p>Monitors user activity secretly.<br>
+    <strong>Effect:</strong> Captures passwords, keystrokes.<br>
+    <strong>Protect Yourself:</strong> Use anti-spyware tools and avoid installing shady browser extensions.
+  </p>
+</div>
+<div class="card">
+  <h3>🎭 Trojan</h3>
+  <p>Disguised as legit software.<br>
+    <strong>Effect:</strong> Installs other malware, steals data.<br>
+    <strong>Protect Yourself:</strong> Download software only from official or trusted sources.
+  </p>
+</div>
+<div class="card">
+  <h3>📢 Adware</h3>
+  <p>Shows unwanted ads.<br>
+    <strong>Effect:</strong> Slows system, annoying popups.<br>
+    <strong>Protect Yourself:</strong> Avoid free software bundles and use an ad blocker.
+  </p>
+</div>
+<div class="card">
+  <h3>🛠️ Rootkit</h3>
+  <p>Grants stealth admin access.<br>
+    <strong>Effect:</strong> Hides other malware.<br>
+    <strong>Protect Yourself:</strong> Keep your system updated and use security software with rootkit detection.
+  </p>
+</div>
+<div class="card">
+  <h3>⌨️ Keylogger</h3>
+  <p>Records every keystroke.<br>
+    <strong>Effect:</strong> Steals login credentials.<br>
+    <strong>Protect Yourself:</strong> Use anti-keylogger software and enable 2FA on accounts.
+  </p>
+</div>
+<div class="card">
+  <h3>🤖 Botnet</h3>
+  <p>Network of controlled devices.<br>
+    <strong>Effect:</strong> Launches attacks like DDoS.<br>
+    <strong>Protect Yourself:</strong> Keep your router firmware updated and avoid unsecured IoT devices.
+  </p>
+</div>
+<div class="card">
+  <h3>🧬 Fileless Malware</h3>
+  <p>Lives in memory, uses legit tools.<br>
+    <strong>Effect:</strong> Hard to detect or remove.<br>
+    <strong>Protect Yourself:</strong> Use behavioral-based antivirus tools and restrict admin rights.
+  </p>
+</div>
+  </div>
+</section>
 
     <section id="protect" class="card">
-      <span class="kicker">Protect Yourself</span>
-      <h2>How to Protect Yourself</h2>
-      <ul class="checklist">
-        <li><span class="check"><input type="checkbox" /></span> Use strong, unique passwords with a password manager</li>
-        <li><span class="check"><input type="checkbox" /></span> Turn on two-factor authentication (2FA)</li>
-        <li><span class="check"><input type="checkbox" /></span> Keep your device and apps up to date</li>
-        <li><span class="check"><input type="checkbox" /></span> Avoid clicking on suspicious links or attachments</li>
-        <li><span class="check"><input type="checkbox" /></span> Back up your important files regularly</li>
-      </ul>
-    </section>
+  <span class="kicker">Protect Yourself</span>
+  <h2>How to Protect Yourself</h2>
+  <ul class="checklist">
+    <li><span class="check"><input type="checkbox" /></span> Use strong, unique passwords with a password manager</li>
+    <li><span class="check"><input type="checkbox" /></span> Turn on two-factor authentication (2FA)</li>
+    <li><span class="check"><input type="checkbox" /></span> Keep your device and apps up to date</li>
+    <li><span class="check"><input type="checkbox" /></span> Avoid clicking on suspicious links or attachments</li>
+    <li><span class="check"><input type="checkbox" /></span> Back up your important files regularly</li>
+  </ul>
+</section>
 
-    <section id="phishing" class="card">
-      <span class="kicker">Spot Phishing</span>
-      <h2>How to Spot Phishing</h2>
-      <ul class="tips">
-        <li><strong>Sender Is Off:</strong> Check the sender’s email carefully.</li>
-        <li><strong>Urgent Messages:</strong> Phishing attempts often create panic.</li>
-        <li><strong>Typos & Bad Grammar:</strong> Real businesses typically proofread thoroughly.</li>
-        <li><strong>Strange Links:</strong> Hover to preview link URLs before clicking.</li>
-        <li><strong>Requests for Sensitive Info:</strong> Legitimate companies don’t ask for your password via email.</li>
-      </ul>
-    </section>
+    <section id="phishing" class="card" style="background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%); color: #fff;">
+  <span class="kicker" style="color: #e0d7ff;">Spot Phishing</span>
+  <h2 style="color:#fff; margin-bottom:16px;">How to Spot Phishing Scams — Stay Alert!</h2>
+  <p style="font-style: italic; opacity: 0.85; margin-bottom: 24px;">
+    Phishing scams try to trick you into giving away your info. Here’s what to watch out for:
+  </p>
+  <ul class="tips" style="list-style:none; padding:0; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+    <li style="background:rgba(0,0,0,0.2); border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:24px; line-height:1;">📧</span>
+      <div>
+        <strong>Sender Is Off:</strong> Emails from scammers often use suspicious or misspelled sender addresses. Always double-check the sender's email domain.
+      </div>
+    </li>
+    <li style="background:rgba(0,0,0,0.2); border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:24px;">⏰</span>
+      <div>
+        <strong>Urgent Messages:</strong> Scammers create fake emergencies to rush you into action — breathe, then verify before reacting.
+      </div>
+    </li>
+    <li style="background:rgba(0,0,0,0.2); border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:24px;">📝</span>
+      <div>
+        <strong>Typos & Grammar:</strong> Professional companies proofread emails. Mistakes and awkward phrasing can be red flags.
+      </div>
+    </li>
+    <li style="background:rgba(0,0,0,0.2); border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:24px;">🔗</span>
+      <div>
+        <strong>Strange Links:</strong> Hover over links to see where they really go. If it looks weird or unrelated, don’t click!
+      </div>
+    </li>
+    <li style="background:rgba(0,0,0,0.2); border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:24px;">🔒</span>
+      <div>
+        <strong>Requests for Sensitive Info:</strong> Legit companies never ask for passwords or payment info via email. When in doubt, contact them directly.
+      </div>
+    </li>
+  </ul>
+  <p style="margin-top:24px; font-weight:600; font-size:14px; opacity:0.8;">
+    Remember: When something feels off, trust your gut and verify before acting.
+  </p>
+</section>
 
     <section id="help" class="card">
       <span class="kicker">If You’re Hacked</span>
